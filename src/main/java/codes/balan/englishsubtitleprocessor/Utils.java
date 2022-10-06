@@ -39,7 +39,7 @@ public class Utils {
 
             if(localMinute!=minute){
                 localMinute = minute;
-                String localTitle = "\n\n Wors Up to minute: "+ minute + "\n\n";
+                String localTitle = "\n\n Words Up to minute: "+ minute + "\n\n";
                 Files.write(Paths.get(file.getAbsolutePath()), localTitle.getBytes(), StandardOpenOption.APPEND);
 
             }

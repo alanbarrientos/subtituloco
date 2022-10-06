@@ -55,10 +55,10 @@ public class SentenceParser {
             }
             idOfLine=idOfLine+1;
             sentences.add(sentence);
-//            if(lineOfSubtitle.trim().replaceAll("\\.", "")==String.valueOf(upToMinute)){
-//                System.out.println();
+//            if(lineOfSubtitle.matches("^"+String.valueOf(upToMinute)+".$")){
+//                System.out.println("sadfdsfa");
 //            }
-        }while(lineOfSubtitle.trim().replaceAll(".", "")!=String.valueOf(upToMinute));
+        }while(!lineOfSubtitle.matches("^"+String.valueOf(upToMinute)+".$"));
         return sentences;
     }
 
@@ -116,7 +116,7 @@ public class SentenceParser {
             if (lineOfSubtitle.matches(TIME)) {
                 String[] times = lineOfSubtitle.split("--> ");
                 int time = minuteOfSubtitle(times[1]);
-                if (time > minute) {
+                if (time-1 > minute) {
                     lineOfSubtitle = String.valueOf(minute)+".";
                     minute=minute+10;
                 }else{
