@@ -16,12 +16,11 @@ public class Main {
     //$_ java -jar esp.jar arg1 arg2 arg3
     public static void main(String[] args) throws IOException {
         Set<Word> setWords = new HashSet<Word>();
-        Set<String> setStringsWords= new HashSet<String>();
 //        String subtitleFile = args[0];
 //        String outputFile = args[1];
 //        String Type = args[2];
-        String subtitleFile = "C:\\Users\\alanb\\Downloads\\suits.s01.e01.pilot.(2011).eng.1cd.(8832673)\\Suits S01E01 Pilot.EXTENDED.DVDRip.NonHI.en.UNVSL.srt";
-        String outputFile = "C:\\Users\\alanb\\Downloads\\suits.s01.e01.pilot.(2011).eng.1cd.(8832673)\\MySubtitle.txt";
+        String subtitleFile = "C:\\Users\\alanb\\Downloads\\suits.s01.e01.pilot.(2011).eng.1cd.(8832673)\\Suits S01E05 Bail Out.DVDRip.NonHI.en.UNVSL.srt";
+            String outputFile = "C:\\Users\\alanb\\Downloads\\suits.s01.e01.pilot.(2011).eng.1cd.(8832673)\\Suits S01E05.txt";
         String Type = "As File";
 
         Utils utils = new Utils();
@@ -30,6 +29,7 @@ public class Main {
 
         int minute = 0;
 // leer set de archivo de episodios anteriores.
+        Set<String> setStringsWords= utils.readPreviousWords();
         while (sentenceParser.hasMoreData()) {
             minute = minute + 10;
             List<String> sentences = sentenceParser.getNextSentences(minute);
@@ -41,6 +41,7 @@ public class Main {
                     w.setWord(w.getWord().replaceAll("\\??\\.?\\,?\\:?", ""));
                     w.setWord(w.getWord().replaceAll("</?i>?", ""));
                     w.setWord(w.getWord().replaceAll("\"", ""));
+                    w.setWord(w.getWord().replaceAll("\\$\\d+", ""));
                     w.setWord(w.getWord().toLowerCase());
                     if(!setStringsWords.contains(w.getWord())){
                         setStringsWords.add(w.getWord());
