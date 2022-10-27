@@ -19,8 +19,9 @@ public class Main {
 //        String subtitleFile = args[0];
 //        String outputFile = args[1];
 //        String Type = args[2];
-        String subtitleFile = "C:\\Users\\alanb\\Downloads\\suits.s01.e01.pilot.(2011).eng.1cd.(8832673)\\Suits S01E05 Bail Out.DVDRip.NonHI.en.UNVSL.srt";
-            String outputFile = "C:\\Users\\alanb\\Downloads\\suits.s01.e01.pilot.(2011).eng.1cd.(8832673)\\Suits S01E05.txt";
+//
+        String subtitleFile = "C:\\Users\\alanb\\Downloads\\suits.s01.e01.pilot.(2011).eng.1cd.(8832673)\\Suits S01E06 Tricks of the Trade.DVDRip.NonHI.en.UNVSL.srt";
+            String outputFile = "C:\\Users\\alanb\\Downloads\\suits.s01.e01.pilot.(2011).eng.1cd.(8832673)\\Suits S01E06.txt";
         String Type = "As File";
 
         Utils utils = new Utils();
